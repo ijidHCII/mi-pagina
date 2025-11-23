@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+        }
+
+        .menu {
+            max-width: 350px;
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .chapter {
+            margin-top: 20px;
+        }
+
+        .chapter-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+            cursor: pointer;
+            padding: 10px;
+            background: #e0e0e0;
+            border-radius: 6px;
+        }
+
+        .submenu {
+            display: none;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 8px;
+            background: #f7f7f7;
+            margin: 5px 0;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .submenu a:hover {
+            background: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .menu {
+                width: 90%;
+            }
+        }
+    </style>
+
+    <script>
+        function toggle(id) {
+            let submenu = document.getElementById(id);
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="menu">
+
+    <h1>Índice</h1>
+
+    <!-- Capítulo 1 -->
+    <div class="chapter">
+        <div class="chapter-title" onclick="toggle('cap1')">
+            Capítulo I
+        </div>
+        <div id="cap1" class="submenu">
+            <a href="haces.html">1. Haces</a>
+            <a href="esquemas.html">2. Esquemas</a>
+            <a href="morfismos.html">3. Morfismos</a>
+        </div>
+    </div>
+
+    <!-- Capítulo 2 -->
+    <div class="chapter">
+        <div class="chapter-title" onclick="toggle('cap2')">
+            Capítulo II
+        </div>
+        <div id="cap2" class="submenu">
+            <a href="variedades.html">1. Variedades</a>
+            <a href="divisores.html">2. Divisores</a>
+            <a href="fibrados.html">3. Fibrados</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
