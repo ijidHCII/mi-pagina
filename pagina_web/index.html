@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PDF en ventana emergente</title>
+
+<style>
+#popup {
+  width: 600px;
+  height: 500px;
+  background: #eee;
+  border: 2px solid #444;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  display: none;
+  box-shadow: 0 0 10px #333;
+}
+
+#popup-header {
+  background: #444;
+  color: white;
+  padding: 5px;
+  cursor: move;
+  user-select: none;
+}
+
+#popup iframe {
+  width: 100%;
+  height: 440px;
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<h2><a href="#" onclick="abrirPDF()">abre el pdf</a></h2>
+
+<div id="popup">
+  <div id="popup-header">
+    Documento PDF
+    <button onclick="cerrar()" style="float:right;">X</button>
+  </div>
+  <iframe id="visor"></iframe>
+</div>
+
+<script>
+let popup = document.getElementById("popup");
+let visor = document.getElementById("visor");
+
+// Abrir la ventana emergente con el PDF
+function abrirPDF() {
+  visor.src = "/pdf/documento1.pdf";   // <-- AQUÍ SE ESPECIFICA EL PDF
+  popup.style.display = "block";
+}
+
+// Cerrar ventana
+function cerrar() {
+  popup.style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
